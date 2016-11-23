@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>3D</title>
+		<style type="text/css">
+			html{
+				height: 100%;}
+			/*.wrap{
+				width: 650px;
+				height: 200px;
+				margin: 150px 450px;
+				position: relative;
+				}*/
+				.cube{
+				width: 200px;
+				height: 200px;
+				margin: 0 auto;
+				/*子元素将保留其 3D 位置。*/
+				transform-style: preserve-3d;
+				/* 名称  几秒1次  无限循环*/
+				-webkit-animation: rotate 20s infinite;
+				/*	动画从头到尾的速度是相同的。*/
+				animation-timing-function: linear;
+				}
+				/*从0到100%*/
+				 @-webkit-keyframes rotate{
+				 	/*开始*/
+					from{
+						transform: rotateX(0deg) rotateY(0deg);
+						}
+					to{
+						transform: rotateX(360deg) rotateY(360deg);}
+				}
+				.cube span{
+				display: block;
+				width: 100px;
+				height: 100px;
+				position: absolute;
+				top: 50px;
+				left: 50px;
+			}
+			.cube .in_pic{
+				width: 100px;
+				height: 100px;
+			}
+			.cube .in_front{
+				transform:  translateZ(50px);
+			}
+			.cube .in_back{
+				transform: translateZ(-50px) ;
+			}
+			.cube .in_left{
+				transform: rotateY(90deg) translateZ(50px);
+			}
+			.cube .in_right{
+				transform: rotateY(-90deg) translateZ(50px);
+			}
+			.cube .in_top{
+				transform: rotateX(90deg) translateZ(50px);
+			}
+			.cube .in_bottom{
+				transform: rotateX(-90deg) translateZ(50px);
+			}
+			
+			
+			
+			.cube div{
+				position: absolute;/*后期要改变位置*/
+				width: 200px;
+				height: 200px;
+				/*background-color: red;*/
+				opacity: 0.5;  /*不透明度*/
+				transition: all 0.4s;
+			}
+			.pic{
+				width: 200px;
+				height: 200px;
+			}
+			.cube .out_front{
+				transform:  translateZ(100px);
+			}
+			.cube .out_back{
+				transform: translateZ(-100px) ;
+			}
+			.cube .out_left{
+				transform: rotateY(90deg) translateZ(100px);
+			}
+			.cube .out_right{
+				transform: rotateY(-90deg) translateZ(100px);
+			}
+			.cube .out_top{
+				transform: rotateX(90deg) translateZ(100px);
+			}
+			.cube .out_bottom{
+				transform: rotateX(-90deg) translateZ(100px);
+			} 
+			
+			
+			
+			 .cube:hover .out_front{
+				transform:  translateZ(200px);
+			}
+			.cube:hover .out_back{
+				transform:  translateZ(-200px) ;
+			}
+			.cube:hover .out_left{
+				transform:  rotateY(90deg) translateZ(200px);
+			}
+			.cube:hover .out_right{
+				transform:  rotateY(-90deg) translateZ(200px);
+			}
+			.cube:hover .out_top{
+				transform: rotateX(90deg) translateZ(200px);
+			}
+			.cube:hover .out_bottom{
+				transform: rotateX(-90deg) translateZ(200px);
+			}
+		</style>
+	</head>
+	<body>
+		<!--<div class="wrap">--> <!--容器层 让 装正方体的盒子转  正方体也就会转-->
+			<div class="cube"> <!--图片容器层-->
+				<div class="out_front"><!--单个图片容器层-->
+					<img src="img/1.jpg"  class="pic">
+				</div>
+				<!--后面图片 -->
+				<div class="out_back">
+					<img src="img/2.jpg"  class="pic">
+				</div>
+				<!--左图片 -->
+				<div class="out_left">
+					<img src="img/3.jpg"  class="pic">
+				</div>
+				<div class="out_right">
+					<img src="img/4.jpg"  class="pic">
+				</div>
+				<div class="out_top">
+					<img src="img/5.jpg"  class="pic">
+				</div>
+				<div class="out_bottom">
+					<img src="img/6.jpg"  class="pic">
+				</div>
+				<!--小正方体 --> 
+				<span class="in_front">
+					<img src="img/1.jpg" class="in_pic" />
+				</span>
+				<span class="in_back">
+					 <img src="img/2.jpg" class="in_pic" />
+				</span>
+				<span class="in_left">
+					<img src="img/3.jpg" class="in_pic" />
+				</span>
+				<span class="in_right">
+					<img src="img/4.jpg" class="in_pic" />
+				</span>
+				<span class="in_top">
+					<img src="img/5.jpg" class="in_pic" />
+				</span>
+				<span class="in_bottom">
+					<img src="img/6.jpg" class="in_pic" />
+				</span>
+			</div>
+	<!--	</div>-->
+	</body>
+</html>
